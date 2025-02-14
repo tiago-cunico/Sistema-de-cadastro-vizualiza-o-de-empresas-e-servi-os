@@ -1,0 +1,160 @@
+/* Definições gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Animação de Fade-In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de Escala para Inputs */
+@keyframes inputScale {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+}
+
+/* Animação de Pulsar para o Botão */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03)
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilo do contêiner */
+.container {
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+}
+
+/* Estilo das labels */
+label {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    display: block;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
+
+/* Estilo dos inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: inputScale 1s ease-in-out 1.5s forwards;
+}
+
+/* Efeito de foco nos inputs */
+input[type="text"]:focus {
+    border-color: #1E90FF;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+}
+
+/* Estilo do botão */
+button {
+    background-color: #1E90FF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonPulse 1.5s infinite;
+}
+
+/* Efeito de hover no botão */
+button:hover {
+    background-color: #0044cc;
+    transform: scale(1.05);
+}
+
+/* Estilo do rodapé */
+footer {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: auto;
+    animation: fadeIn 1.5s ease-in-out 2s forwards;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* Título menor em telas pequenas */
+    }
+
+    label {
+        font-size: 14px; /* Labels menores em telas pequenas */
+    }
+
+    input[type="text"] {
+        padding: 12px; /* Inputs menores em telas pequenas */
+        font-size: 14px;
+    }
+
+    button {
+        padding: 12px 24px; /* Botão menor em telas pequenas */
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px; /* Menos padding em telas pequenas */
+    }
+}

@@ -1,0 +1,139 @@
+/* Definições gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Mudança para empilhar elementos */
+}
+
+/* Animação de Fade-In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do contêiner */
+.container {
+    background-color: white;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+    text-align: center;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+}
+
+/* Estilo das informações do usuário */
+p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
+
+/* Efeito de Hover nos Parágrafos */
+p:hover {
+    color: #1E90FF;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo do rodapé */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 2s forwards;
+}
+
+/* Estilo do link de voltar */
+.back-link-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block; /* Para ter o controle de dimensionamento */
+}
+
+.back-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .back-link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .back-link {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

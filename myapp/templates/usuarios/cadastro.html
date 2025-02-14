@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Cadastro de Empresas</title>
+  </head>
+  <body>
+    <form method="post" action="{% url 'listagem_usuarios' %}">
+      {% csrf_token %}
+      <div class="container">
+          <h1 style="text-align: center; margin-bottom: 20px;">Cadastro de Empresas</h1>
+          <label for="empresa">Empresa:</label>
+          <input name="empresa" type="text" id="empresa" placeholder="Digite o nome da empresa" required>
+          <label for="whatsapp">WhatsApp:</label>
+          <input name="whatsapp" type="text" id="whatsapp" placeholder="Digite o WhatsApp da empresa" required>
+          <label for="cnpj">CNPJ:</label>
+          <input name="cnpj" type="text" id="cnpj" placeholder="Digite o CNPJ da empresa" required>
+          <label for="desc">Descrição:</label>
+          <input name="desc" type="text" id="desc" placeholder="Digite a Descrição da empresa" required>
+
+          <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </body>
+</html>

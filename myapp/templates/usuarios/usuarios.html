@@ -1,16 +1,33 @@
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
+
+<title>Lista de Usuarios</title>
 
 <div class="container">
-    <table>
-    <tr>
-        <th>empresa</th>
-        <th>CNPJ</th>
-        
-    </tr>
-    {% for usuario in usuarios %}
-    <tr>
-        <td>{{usuarios.empresa}}</td>
-        <td>{{usuarios.CNPJ}}</td>
-    </tr>
-    {% endfor %}
-</table>
+    <!-- Botão "Home" com a classe para animação -->
+    <p><a href="{% url 'home' %}" class="home-button">Home</a></p>
+
+    <div class="table-wrapper">
+        <table class="animated-table">
+            <thead>
+                <tr>
+                    <th>Id Usuario</th>
+                    <th>Empresa:</th>
+                    <th>WhatsApp:</th>
+                    <th>CNPJ:</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.empresa }}</a></td>
+                    <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.cnpj }}</a></td>
+                    <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.whatsapp }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>

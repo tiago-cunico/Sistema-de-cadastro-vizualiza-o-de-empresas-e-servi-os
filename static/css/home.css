@@ -1,0 +1,144 @@
+/* Definições gerais */
+body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #37076a, #2575fc);
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+     
+}
+
+/* Estilo de título */
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilo dos parágrafos */
+p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Estilo dos links */
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botão de cadastro */
+.button-cadastro {
+    background-color: #1E90FF;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px; /* Deixando o botão mais quadrado */
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.button-cadastro:hover {
+    background-color: #0044cc;
+    transform: scale(1.05); /* Leve aumento do tamanho para interação */
+}
+
+/* Botão "Veja a lista de empresas" */
+.button-lista {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px; /* Deixando o botão mais quadrado */
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.button-lista:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Leve aumento do tamanho para interação */
+}
+
+/* Estilo de contêiner */
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Estilo do rodapé */
+footer {
+    font-size: 14px;
+    margin-top: auto;
+    padding: 20px;
+    color: #777;
+    width: 100%;
+    text-align: center;
+    background-color: #f4f4f4;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .button-cadastro,
+    .button-lista {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .button-cadastro,
+    .button-lista {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
