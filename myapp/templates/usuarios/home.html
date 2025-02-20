@@ -10,9 +10,11 @@
 <body>
     <div class="container">
         <h1><i>Seja Bem-Vindo!</i></h1>
-        <i><p>Aplicativo informativo intencional em divulgar empresas prestadoras de servicos, suas qualidades servicos e localização</p></i>
-        <a href="{% url 'cadastro' %}" class="button-cadastro">Cadastre-se</a>
-        <a href="{% url 'listagem_usuarios' %}" class="button-lista">Veja a lista de empresas</a>
+        <i><p>Aplicativo informativo intencional em divulgar empresas prestadoras de serviços, suas qualidades, serviços e localização.</p></i>
+        <div class="button-group">
+            <a href="{% url 'cadastro' %}" class="button-cadastro">Cadastre-se</a>
+            <a href="{% url 'listagem_usuarios' %}" class="button-lista">Veja a lista de empresas</a>
+        </div>
     </div>
     
     <footer>

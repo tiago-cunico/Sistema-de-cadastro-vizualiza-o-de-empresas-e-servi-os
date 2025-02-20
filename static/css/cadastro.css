@@ -158,3 +158,19 @@ footer {
         padding: 15px; /* Menos padding em telas pequenas */
     }
 }
+/* Estilo para o botão de Home */
+.home-button {
+    margin-left: 30px;
+    position: absolute;
+    top: 20px; /* Ajuste a distância do topo */
+    left: 20px; /* Ajuste a distância da esquerda */
+    text-decoration: none;
+    color: #1E90FF;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.home-button:hover {
+    color: #0044cc; /* Alteração de cor no hovesr */
+}
