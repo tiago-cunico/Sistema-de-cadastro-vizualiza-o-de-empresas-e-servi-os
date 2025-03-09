@@ -24,11 +24,16 @@
 
         <p><strong>Descrição da Empresa:</strong></p>
     <p>{{ usuario.desc }}</p>
-        <!-- Outros campos do usuário -->
     </div>
 
-    <footer>
-        <p>&copy; 2025 - Todos os direitos reservados.</p>
-    </footer>
+
+    {% if usuario.logo %}
+    <div class="img_usuario">
+        <img src="{{ usuario.logo.url }}" alt="Logo da empresa" style="max-width: 200px;">
+    
+    {% else %}
+    <p>Nenhuma imagem cadastrada.</p>
+{% endif %}
+</div>
 </body>
 </html>

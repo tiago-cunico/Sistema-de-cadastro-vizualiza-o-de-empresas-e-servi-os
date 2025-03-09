@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <p><a href="{% url 'home' %}" class="home-button">Home</a></p>
-
     <title>Cadastro de Empresas</title>
   </head>
   <body>
-    <form method="post" action="{% url 'listagem_usuarios' %}">
+    <p><a href="{% url 'home' %}" class="home-button">Home</a></p>
+
+    <form method="post" enctype="multipart/form-data" action="{% url 'cadastrar_empresa' %}">
       {% csrf_token %}
       <div class="container">
           <h1 style="text-align: center; margin-bottom: 20px;">Cadastro de Empresas</h1>
@@ -25,8 +24,37 @@
           <label for="desc">Descrição:</label>
           <input name="desc" type="text" id="desc" placeholder="Digite a Descrição da empresa" required>
 
-          <button type="submit">Enviar</button>
+          <div class="upload_img">
+            <label for="logo">Selecione uma imagem:</label>
+            <div class="upload-box">
+              <i>Escolha o arquivo </i>
+              <input class="button-upload_img" type="file" name="logo" id="logo" accept="image/*" required>
+              <!-- Elemento para exibir o nome da imagem -->
+              <span id="nome-imagem" class="nome-imagem"></span>
+            </div>
+          </div>
+
+          <br>
+          <button type="submit">Cadastrar</button>
       </div>
     </form>
+
+
+
+    <!------------------------------------------------------------->
+
+    <!-- Script JavaScript para exibir o nome da imagem automaticamente -->
+    <script>
+      document.getElementById('logo').addEventListener('change', function() {
+        var nomeImagem = document.getElementById('nome-imagem');
+        if (this.files.length > 0) {
+          // Exibe o nome do arquivo selecionado
+          nomeImagem.textContent = this.files[0].name;
+        } else {
+          // Limpa o nome se nenhum arquivo for selecionado
+          nomeImagem.textContent = '';
+        }
+      });
+    </script>
   </body>
 </html>

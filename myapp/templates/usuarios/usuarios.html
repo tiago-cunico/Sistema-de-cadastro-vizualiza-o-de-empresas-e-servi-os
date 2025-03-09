@@ -4,11 +4,25 @@
 
 <title>Lista de Usuarios</title>
 
+<div class="barra-pesquisa">
+    <form method="get" action="">
+        <input
+            type="text"
+            name="q"
+            class="barra-pesquisa-input"
+            placeholder="Digite o nome da empresa..."
+            value="{{ termo_pesquisa }}"
+        >
+        <button class="btn-barraPesquisa" type="submit">Pesquisar</button>
+    </form>
+</div>
 
 <div class="container">
     <!-- Botão "Home" com a classe para animação -->
     <p><a href="{% url 'home' %}" class="home-button">Home</a></p>
 
+
+    <!-- Tabela de Usuários -->
     <div class="table-wrapper">
         <table class="animated-table">
             <thead>
@@ -24,11 +38,14 @@
                 <tr>
                     <td>{{ usuario.id }}</td>
                     <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.empresa }}</a></td>
-                    <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.cnpj }}</a></td>
                     <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.whatsapp }}</a></td>
+                    <td><a href="{% url 'detalhes_usuario' usuario.id %}">{{ usuario.cnpj }}</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Nenhuma empresa encontrada.</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-</div>

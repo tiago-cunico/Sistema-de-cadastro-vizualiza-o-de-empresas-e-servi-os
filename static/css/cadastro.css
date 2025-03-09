@@ -51,7 +51,7 @@ body {
 /* Estilo do contêiner */
 .container {
     background-color: white;
-    padding: 20px;
+    padding: 60px;
     width: 90%;
     max-width: 600px;
     border-radius: 8px;
@@ -103,6 +103,8 @@ input[type="text"]:focus {
 
 /* Estilo do botão */
 button {
+    margin-left: 32px;
+    margin-bottom: 90px;
     background-color: #1E90FF;
     color: white;
     padding: 15px 30px;
@@ -111,7 +113,6 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
-    margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     animation: buttonPulse 1.5s infinite;
 }
@@ -152,10 +153,17 @@ footer {
     button {
         padding: 12px 24px; /* Botão menor em telas pequenas */
         font-size: 16px;
+        margin-left: 15px;
     }
 
     .container {
         padding: 15px; /* Menos padding em telas pequenas */
+    }
+}
+@media (max-width: 480px){
+    .container{
+        padding: 20px;
+        width: 95%;
     }
 }
 /* Estilo para o botão de Home */
@@ -173,4 +181,127 @@ footer {
 
 .home-button:hover {
     color: #0044cc; /* Alteração de cor no hovesr */
+}
+
+/* Estilo base para o container do upload */
+.upload_img {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilo para o label */
+.upload_img label {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px; /* Espaço entre o texto e o quadrado */
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o label */
+.upload_img:hover label {
+    color: #007bff;
+}
+
+/* Container do quadrado de seleção de imagem */
+.upload_img .upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    z-index: 2; /* Garante que o quadrado fique acima do botão */
+}
+
+/* Efeito ao passar o mouse sobre o quadrado */
+.upload_img .upload-box:hover {
+    border-color: #007bff;
+    background-color: #e9f5ff;
+    transform: scale(1.02);
+}
+
+/* Estilo para o input de arquivo */
+.upload_img .button-upload_img {
+    opacity: 0; /* Torna o input invisível */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cobre toda a largura do quadrado */
+    height: 100%; /* Cobre toda a altura do quadrado */
+    cursor: pointer;
+    z-index: 3; /* Garante que o input fique acima do quadrado */
+}
+
+/* Estilo personalizado para o botão de upload */
+.upload_img .custom-upload-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1; /* Garante que o botão fique abaixo do quadrado */
+    margin-top: 10px; /* Espaço entre o quadrado e o botão */
+    pointer-events: none; /* Impede que o botão seja clicável */
+}
+
+/* Efeito ao passar o mouse sobre o botão personalizado */
+.upload_img:hover .custom-upload-button {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Animação quando um arquivo é selecionado */
+.upload_img input:valid + .upload-box::after {
+    content: '✔ Arquivo Selecionado';
+    display: block;
+    margin-top: 10px;
+    color: #28a745;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Efeito de onda ao clicar no quadrado */
+.upload_img .upload-box:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 123, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s ease-out;
+}
+
+/* Animação de ripple (onda) */
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* Animação de fadeIn para o texto de confirmação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
